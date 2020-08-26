@@ -1,17 +1,16 @@
 const generateMarkdown = require('./utils/generateMarkdown');
-const { write } = require('fs');
-
-// array of questions for user
-const questions = [
-
-];
+const fs = require('fs');
 
 // function to write README file
 function writeToFile(fileName, data) {
-    console.log(generateMarkdown(project));
+    fs.writeFile(fileName, generateMarkdown(data), function(err) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('success!');
+        }
+    })
 }
-
-let project = {};
 
 // function to initialize program
 function init() {
@@ -49,12 +48,6 @@ function init() {
             name: 'instructions'
         },
         {
-            type: 'list',
-            message: 'Which licence would you like to cover your application? ',
-            name: 'licence',
-            choices: ['MIT', 'GNU General Public License v3.0', 'Apache License 2.0', 'ISC License']
-        },
-        {
             type: 'input',
             message: 'What is your GitHub username? ',
             name: 'username'
@@ -63,10 +56,17 @@ function init() {
             type: 'input',
             message: 'What is your email address? ',
             name: 'email'
+        },
+        {
+            type: 'list',
+            message: 'Which licence would you like to cover your application? ',
+            name: 'license',
+            choices: ['MIT', 'ISC', 'Apache 2.0', 'GNU General Public v3.0']
         }
         ])
         .then(answers => {
-            project.title = answers.title;
+            console.log(answers);
+            writeToFile('product/README.md', answers)
         });
 }
 
