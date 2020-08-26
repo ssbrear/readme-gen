@@ -84,6 +84,9 @@ function init() {
                     answers.license = 'GNU General Public License: Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.'
                     break;
             }
+            if (!fs.existsSync('./product')) {
+                fs.mkdirSync('./product')
+            }
             writeToFile('product/README.md', answers)
         });
 }
