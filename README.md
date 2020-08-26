@@ -14,13 +14,17 @@ This project is designed to create a simple, yet effective, README.md based on t
 * [License](#license)
 
 ## Installation
-Simply navigate to the 'readme-gen' folder in your preferred terminal, and run ```node index.js``` to begin the program.
+<center>Simply navigate to the 'readme-gen' folder in your preferred terminal, and run ```node index.js``` to begin the program.</center>
+
 ![Starting Picture](./pictures/starting.JPG)
 
 ## Usage
-Respond to any questions asked by the program until completed. Leave any fields blank if not wanted.
+<center>Respond to any questions asked by the program until completed. Leave any fields blank if not wanted.</center>
+
 ![Ending Picture](./pictures/ending.JPG)
-A 'product' directory will be created, in which the generated README.md will be placed.
+
+<center>A 'product' directory will be created, in which the generated README.md will be placed.</center>
+
 ![Testing Picture](./pictures/testing.JPG)
 ![Finalized Picture](./pictures/finalized.JPG)
 
