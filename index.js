@@ -65,18 +65,23 @@ function init() {
         }
         ])
         .then(answers => {
+            // Short descriptions of each license are taken from choosealicense.com
             switch (answers.license) {
                 case 'MIT':
-                    answers.license = '![MIT License](https://img.shields.io/badge/License-MIT-Green)';
+                    answers.badge = '![MIT License](https://img.shields.io/badge/License-MIT-Green)';
+                    answers.license = 'MIT License: A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.';
                     break;
                 case 'ISC':
-                    answers.license = '![ISC License](https://img.shields.io/badge/License-ISC-Green)';
+                    answers.badge = '![ISC License](https://img.shields.io/badge/License-ISC-Green)';
+                    answers.license = 'ISC License: A permissive license lets people do anything with your code with proper attribution and without warranty. The ISC license is functionally equivalent to the BSD 2-Clause and MIT licenses, removing some language that is no longer necessary.'
                     break;
                 case 'Apache 2.0':
-                    answers.license = '![ISC License](https://img.shields.io/badge/License-Apache-Green)';
+                    answers.badge = '![ISC License](https://img.shields.io/badge/License-Apache-Green)';
+                    answers.license = 'Apache 2.0 License: A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.'
                     break;
                 case 'GNU General Public v3.0':
-                    answers.license = '![ISC License](https://img.shields.io/badge/License-GNUv3-Green)';
+                    answers.badge = '![ISC License](https://img.shields.io/badge/License-GNUv3-Green)';
+                    answers.license = 'GNU General Public License: Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.'
                     break;
             }
             writeToFile('product/README.md', answers)
