@@ -1,13 +1,13 @@
 {
-  "name": "static-site",
+  "name": "readme-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generates a README based on information resulting from several user prompts.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Sebastian Brear",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^6.3.1"
   }
