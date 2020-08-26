@@ -65,7 +65,20 @@ function init() {
         }
         ])
         .then(answers => {
-            console.log(answers);
+            switch (answers.license) {
+                case 'MIT':
+                    answers.license = '![MIT License](https://img.shields.io/badge/License-MIT-Green)';
+                    break;
+                case 'ISC':
+                    answers.license = '![ISC License](https://img.shields.io/badge/License-ISC-Green)';
+                    break;
+                case 'Apache 2.0':
+                    answers.license = '![ISC License](https://img.shields.io/badge/License-Apache-Green)';
+                    break;
+                case 'GNU General Public v3.0':
+                    answers.license = '![ISC License](https://img.shields.io/badge/License-GNUv3-Green)';
+                    break;
+            }
             writeToFile('product/README.md', answers)
         });
 }
